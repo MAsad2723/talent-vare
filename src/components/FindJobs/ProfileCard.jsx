@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import profile2 from "/profile2.png";
 import cover from "/cover.png";
+import InterviewSection from "./InterviewSection";
 
 const ProfileCard = () => {
   const [user, setUser] = useState({});
+  const [openInterviewSection, setOpenInterviewSection] = useState(false);
+
   useEffect(() => {
     const getProfileDetails = () => {
       // API Call to get the details of profile
@@ -101,15 +104,22 @@ const ProfileCard = () => {
       </div>
 
       {/* Calendar Section */}
-      <div className="bg-white rounded-2xl p-3 flex flex-col justify-between">
-        <div className="flex justify-between items-center">
+      <div className="bg-white rounded-2xl p-3 flex flex-col justify-between gap-3">
+        <div
+          className="flex justify-between items-center"
+          onClick={() => setOpenInterviewSection(!openInterviewSection)}
+        >
           <div>
             <h2 className="text-lg font-semibold">My Calendar</h2>
             <p className="text-gray-400 text-sm cursor-pointer">
               Upcoming Interviews
             </p>
           </div>
-          <span className="text-xl cursor-pointer">
+          <span
+            className={`text-slate-800 transition-transform duration-300 text-xl ${
+              openInterviewSection ? "rotate-0" : "rotate-180"
+            }`}
+          >
             <svg
               width="13"
               height="8"
@@ -124,18 +134,23 @@ const ProfileCard = () => {
             </svg>
           </span>
         </div>
-        <div className="space-y-3 bg-white">
+        {/* Upcoming Interviews */}
+        <div
+          className={`space-y-3 bg-white overflow-hidden transition-all duration-300 ease-in-out ${
+            openInterviewSection ? "max-h-80" : "max-h-0"
+          }`}
+        >
           {user?.interviews?.map((interview, index) => (
-            <div key={index} className="flex items-center p-3 rounded-lg">
+            <div key={index} className="flex items-center rounded-lg">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" // Figma logo
                 alt="Company Logo"
-                className="w-6 h-6 rounded-md mr-3"
+                className="w-7 h-7 rounded-md mr-3"
               />
-              <div className="flex-1 text-sm">
+              <div className="flex-1">
                 <h3 className="font-semibold">{interview.role}</h3>
-                <p className="text-gray-500">{interview.company}</p>
-                <p className="text-gray-500">
+                <p className="text-gray-500 text-sm">{interview.company}</p>
+                <p className="text-gray-500 text-sm">
                   {interview.date} | {interview.time} | {interview.location}
                 </p>
               </div>

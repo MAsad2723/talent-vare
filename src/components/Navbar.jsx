@@ -4,7 +4,7 @@ import logo from "/logo.png";
 import profile from "/profile.png";
 
 const Navbar = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("Find Jobs");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
