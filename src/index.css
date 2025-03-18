@@ -1,4 +1,17 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('./assets/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('./assets/fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 :root {
   --primary-color: #0154AA;
@@ -8,3 +21,4 @@ body {
     background-color: #F4F4F4;
     font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
 }
+

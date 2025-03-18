@@ -149,7 +149,7 @@ const FindJobs = () => {
         <div className="flex gap-2 items-center text-[#585D6E]">
           <div>Similar:</div>
           <div
-            className="flex gap-2 overflow-auto w-screen"
+            className="flex gap-2 overflow-auto w-screen md:max-w-237"
             style={{ scrollbarWidth: "none" }}
           >
             {similar.map((skill) => (
