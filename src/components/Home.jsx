@@ -4,7 +4,7 @@ import FindJobs from "./FindJobs";
 
 const Home = () => {
   return (
-    <div className="md:px-10">
+    <div className="px-2 md:px-10">
       <Routes>
         <Route path="/" element={<FindJobs />} />
         {/* We can add multiple components here according to route */}

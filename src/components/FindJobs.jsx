@@ -21,7 +21,7 @@ const FindJobs = () => {
   return (
     <div className="flex flex-col md:flex-row gap-6 mt-8">
       <ProfileCard />
-      <div className="flex flex-col gap-4 mt-3 w-full px-2 md:px-0">
+      <div className="flex flex-col gap-4 mt-3 w-full">
         <div className="flex flex-col">
           <div className="font-bold text-2xl">
             Find your Dream Job,{" "}
