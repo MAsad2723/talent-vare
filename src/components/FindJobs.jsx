@@ -160,7 +160,7 @@ const FindJobs = () => {
           </div>
         </div>
         <div
-          className="flex flex-col gap-10 overflow-auto h-136"
+          className="flex flex-col gap-10 overflow-auto h-122"
           style={{ scrollbarWidth: "none" }}
         >
           <FeaturedJobs />
