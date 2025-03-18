@@ -33,7 +33,7 @@ const FindJobs = () => {
           </div>
         </div>
         {/* Mobile Screen */}
-        <div className="bg-white flex md:hidden flex-col flex-wrap justify-between rounded-lg w-full p-[20px] gap-2">
+        <div className="bg-white flex md:hidden flex-col flex-wrap justify-between rounded-lg w-full p-3 gap-2">
           {/* Job Title Input */}
           <input
             type="text"
