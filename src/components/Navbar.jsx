@@ -26,6 +26,7 @@ const Navbar = () => {
               ? "flex flex-col gap-4 absolute top-16 px-3 py-2 h-screen bg-white z-10 start-0"
               : "hidden md:flex items-center gap-7 text-sm"
           }`}
+          onClick={() => setIsMenuOpen(false)}
         >
           <Link
             to="/"
