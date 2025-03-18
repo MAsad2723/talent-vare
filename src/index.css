@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #0154AA;
+  --nav-link-color: #737A91;
+}
+body {
+    background-color: #F4F4F4;
+}
