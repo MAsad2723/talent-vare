@@ -38,11 +38,11 @@ const FindJobs = () => {
           <input
             type="text"
             placeholder="Job Title, Company, or Keywords"
-            className="flex-1 px-4 py-2 outline-none text-[#585D6E] w-full border rounded-lg"
+            className="flex-1 px-2 py-2 outline-none text-[#585D6E] w-full border rounded-lg"
           />
           <div className="flex justify-between items-center">
             {/* Location Dropdown */}
-            <select className="px-4 py-2 outline-none bg-transparent text-[#585D6E] cursor-pointer border rounded-lg w-[47%]">
+            <select className="px-1 py-2 outline-none bg-transparent text-[#585D6E] cursor-pointer border rounded-lg w-[47%]">
               <option>Select Location</option>
               <option>Remote</option>
               <option>New York</option>
@@ -53,7 +53,7 @@ const FindJobs = () => {
             <span className="border-l h-6 text-gray-300"></span>
 
             {/* Job Type Dropdown */}
-            <select className="px-4 py-2 text-[#585D6E] outline-none bg-transparent cursor-pointer border rounded-lg w-[47%]">
+            <select className="px-1 py-2 text-[#585D6E] outline-none bg-transparent cursor-pointer border rounded-lg w-[47%]">
               <option>Job Type</option>
               <option>Full-time</option>
               <option>Part-time</option>
@@ -148,9 +148,12 @@ const FindJobs = () => {
         </div>
         <div className="flex gap-2 items-center text-[#585D6E]">
           <div>Similar:</div>
-          <div className="flex flex-wrap gap-2">
+          <div
+            className="flex gap-2 overflow-auto w-screen"
+            style={{ scrollbarWidth: "none" }}
+          >
             {similar.map((skill) => (
-              <div className="border text-xs md:text-base py-[8px] px-[15px] rounded-lg hover:text-[var(--primary-color)] cursor-pointer">
+              <div className="border text-xs md:text-base py-[8px] px-[15px] rounded-lg hover:text-[var(--primary-color)] cursor-pointer text-nowrap">
                 {skill}
               </div>
             ))}
