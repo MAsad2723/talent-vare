@@ -105,6 +105,47 @@ const Navbar = () => {
           >
             Notifications
           </Link>
+          <div
+            className={`${
+              isMenuOpen ? "flex" : "hidden"
+            } bg-[#F6F9FF] w-full md:w-[261px] items-center rounded-lg`}
+          >
+            <svg
+              className="mx-2"
+              width="20"
+              height="20"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.4999 17.024L13.9065 14.4306"
+                stroke="#737A91"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+              />
+              <path
+                d="M13.0976 7.57274C13.0928 8.99051 12.5901 10.3615 11.6773 11.4464C10.7645 12.5313 9.49967 13.261 8.10361 13.5083C6.70756 13.7555 5.26902 13.5045 4.03919 12.7991C2.80936 12.0936 1.86641 10.9786 1.37498 9.64874C0.883559 8.31886 0.874896 6.85859 1.35051 5.52297C1.82611 4.18735 2.75577 3.06123 3.97714 2.34126C5.19851 1.62129 6.63397 1.35324 8.03286 1.58389C9.43175 1.81454 10.7052 2.52924 11.6308 3.6032"
+                stroke="#737A91"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+              />
+            </svg>
+            <input
+              className="p-2 outline-none"
+              type="search"
+              placeholder="Search"
+            />
+          </div>
+          <div
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } bg-[var(--primary-color)] text-white py-2 rounded-md px-6 cursor-pointer`}
+          >
+            Resume Builder
+          </div>
         </div>
       </div>
       <div className="hidden md:flex items-center gap-3">
