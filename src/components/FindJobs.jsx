@@ -16,7 +16,7 @@ const FindJobs = () => {
     applicants: "200",
   };
   return (
-    <div className="flex gap-6 mt-8">
+    <div className="flex flex-col md:flex-row gap-6 mt-8">
       <ProfileCard />
       <div className="flex flex-col gap-4 mt-3 w-full">
         <div className="flex flex-col">
@@ -29,19 +29,19 @@ const FindJobs = () => {
             available today!
           </div>
         </div>
-        <div className="bg-white flex justify-between items-center rounded-lg w-full p-[20px]">
+        <div className="bg-white flex flex-wrap justify-between items-center rounded-lg w-full p-[20px]">
           {/* Job Title Input */}
           <input
             type="text"
             placeholder="Job Title, Company, or Keywords"
             className="flex-1 px-4 py-2 outline-none text-[#585D6E]"
           />
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5">
             {/* Divider */}
             <span className="border-l h-6 text-gray-300"></span>
 
             {/* Location Dropdown */}
-            <select className="px-4 py-2 outline-none bg-transparent text-[#585D6E]">
+            <select className="px-4 py-2 outline-none bg-transparent text-[#585D6E] cursor-pointer">
               <option>Select Location</option>
               <option>Remote</option>
               <option>New York</option>
@@ -52,7 +52,7 @@ const FindJobs = () => {
             <span className="border-l h-6 text-gray-300"></span>
 
             {/* Job Type Dropdown */}
-            <select className="px-4 py-2 text-[#585D6E] outline-none bg-transparent">
+            <select className="px-4 py-2 text-[#585D6E] outline-none bg-transparent cursor-pointer">
               <option>Job Type</option>
               <option>Full-time</option>
               <option>Part-time</option>
@@ -60,7 +60,7 @@ const FindJobs = () => {
             </select>
 
             {/* Search Button */}
-            <button className="bg-[var(--primary-color)] text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700">
+            <button className="bg-[var(--primary-color)] text-white px-[20px] py-[10px] rounded-lg flex items-center gap-2 cursor-pointer w-[140px] justify-center">
               <svg
                 width="17"
                 height="18"
@@ -83,7 +83,7 @@ const FindJobs = () => {
                   stroke-linecap="round"
                 />
               </svg>
-              Search
+              <div>Search</div>
             </button>
           </div>
         </div>
@@ -112,7 +112,7 @@ const FindJobs = () => {
               ))}
             </div>
           </div>
-          <hr className="m-0 text-gray-300" />
+          <hr className="m-0 text-gray-200" />
           <div className="flex flex-col gap-4">
             <div className="flex gap-5 items-center">
               <div className="text-xl">Recommended Jobs</div>
@@ -126,7 +126,7 @@ const FindJobs = () => {
               ))}
             </div>
           </div>
-          <hr className="m-0 text-gray-300" />
+          <hr className="m-0 text-gray-200" />
           <div className="flex flex-col gap-4">
             <div className="flex gap-5 items-center">
               <div className="text-xl">Latest Jobs</div>

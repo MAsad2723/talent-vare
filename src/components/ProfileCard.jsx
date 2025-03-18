@@ -1,59 +1,79 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile2 from "/profile2.png";
 import cover from "/cover.png";
+
 const ProfileCard = () => {
-  const interviews = [
-    {
-      role: "UI UX Designer",
-      company: "Figma",
-      date: "16th Feb",
-      time: "13:45",
-      location: "Remote",
-      status: "Accepted",
-    },
-    {
-      role: "UI UX Designer",
-      company: "Figma",
-      date: "16th Feb",
-      time: "13:45",
-      location: "Remote",
-      status: "Accepted",
-    },
-    {
-      role: "UI UX Designer",
-      company: "Figma",
-      date: "16th Feb",
-      time: "13:45",
-      location: "Remote",
-      status: "Accepted",
-    },
-  ];
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const getProfileDetails = () => {
+      // API Call to get the details of profile
+      setUser({
+        name: "Albert Flores",
+        title:
+          "Senior Product Designer | UI/UX Designer | Graphic Designer | Web Developer",
+        location: "Clinton, Maryland",
+        profileVisitors: 140,
+        resumeViewers: 20,
+        myJobs: 88,
+        interviews: [
+          {
+            role: "UI UX Designer",
+            company: "Figma",
+            date: "16th Feb",
+            time: "13:45",
+            location: "Remote",
+            status: "Accepted",
+          },
+          {
+            role: "UI UX Designer",
+            company: "Figma",
+            date: "16th Feb",
+            time: "13:45",
+            location: "Remote",
+            status: "Accepted",
+          },
+          {
+            role: "UI UX Designer",
+            company: "Figma",
+            date: "16th Feb",
+            time: "13:45",
+            location: "Remote",
+            status: "Accepted",
+          },
+        ],
+        profilePic: profile2,
+        coverPhoto: cover,
+      });
+    };
+    getProfileDetails();
+  }, []);
   return (
-    <div className="max-w-sm flex flex-col gap-4">
+    <div className="w-sm md:w-md flex flex-col gap-4">
       {/* Profile Header */}
       <div>
         <div className="relative rounded-2xl">
           <img
-            src={cover} // Replace with actual cover image
+            src={user?.coverPhoto} // Replace with actual cover image
             alt="Cover"
             className="w-full h-24 object-cover rounded-t-2xl"
           />
           <img
-            src={profile2} // Replace with actual profile image
+            src={user?.profilePic} // Replace with actual profile image
             alt="Profile"
             className="w-20 h-20 rounded-full border-4 border-white absolute left-1/2 transform -translate-x-1/2 -bottom-8"
           />
         </div>
 
         {/* User Info */}
-        <div className="pt-10 pb-4 text-center px-14 bg-white rounded-2xl">
-          <h2 className="text-xl font-semibold">Albert Flores</h2>
+        <div className="pt-10 pb-4 text-center px-13 bg-white rounded-2xl">
+          <h2 className="text-xl font-semibold">{user?.name}</h2>
           <p className="text-gray-500 text-sm">
-            Senior Product Designer | UI/UX Designer | Graphic Designer | Web
-            Developer
+            {user?.title?.length > 65
+              ? `${user.title.substring(0, 65)}...`
+              : user?.title}
           </p>
           <p className="text-gray-500 text-sm cursor-pointer">
-            Clinton, Maryland
+            {user?.location}
           </p>
         </div>
       </div>
@@ -62,17 +82,21 @@ const ProfileCard = () => {
       <div className="flex flex-col bg-white p-4 rounded-2xl">
         <div className="flex justify-between py-2">
           <span className="">Profile Visitors</span>
-          <span className="text-[var(--primary-color)]">140</span>
+          <span className="text-[var(--primary-color)]">
+            {user?.profileVisitors}
+          </span>
         </div>
         <hr className="border border-gray-200" />
         <div className="flex justify-between py-2">
           <span className="">Resume Viewers</span>
-          <span className="text-[var(--primary-color)]">20</span>
+          <span className="text-[var(--primary-color)]">
+            {user?.resumeViewers}
+          </span>
         </div>
         <hr className="border border-gray-200" />
         <div className="flex justify-between py-2">
           <span className="">My Jobs</span>
-          <span className="text-[var(--primary-color)]">88</span>
+          <span className="text-[var(--primary-color)]">{user?.myJobs}</span>
         </div>
       </div>
 
@@ -101,21 +125,21 @@ const ProfileCard = () => {
           </span>
         </div>
         <div className="space-y-3 bg-white">
-          {interviews.map((interview, index) => (
+          {user?.interviews?.map((interview, index) => (
             <div key={index} className="flex items-center p-3 rounded-lg">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" // Figma logo
                 alt="Company Logo"
-                className="w-10 h-10 rounded-md mr-3"
+                className="w-6 h-6 rounded-md mr-3"
               />
-              <div className="flex-1">
+              <div className="flex-1 text-sm">
                 <h3 className="font-semibold">{interview.role}</h3>
-                <p className="text-gray-500 text-sm">{interview.company}</p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500">{interview.company}</p>
+                <p className="text-gray-500">
                   {interview.date} | {interview.time} | {interview.location}
                 </p>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2">
                 <span className="bg-green-200 text-green-700 px-3 py-1 rounded-md text-sm">
                   {interview.status}
                 </span>
