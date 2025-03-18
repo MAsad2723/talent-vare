@@ -13,7 +13,7 @@ const JobCard = ({ job }) => {
   } = job;
 
   return (
-    <div className="bg-white rounded-lg p-3 w-full md:max-w-max">
+    <div className="bg-white rounded-lg p-3 pe-5 w-full md:max-w-54">
       {/* Promoted Label */}
       {isPromoted && <p className="text-xs font-semibold">Promoted</p>}
 
@@ -78,7 +78,7 @@ const JobCard = ({ job }) => {
 
       {/* Apply Button & Save Icon */}
       <div className="flex items-center justify-between mt-4">
-        <button className="bg-[var(--primary-color)] text-white px-4 py-2 rounded-lg text-sm cursor-pointer">
+        <button className="bg-[var(--primary-color)] text-white px-4 py-2 rounded-lg text-sm w-[120px] cursor-pointer">
           Apply Now
         </button>
         <button role="button" className="cursor-pointer">
