@@ -51,7 +51,7 @@ const ProfileCard = () => {
     getProfileDetails();
   }, []);
   return (
-    <div className="w-sm md:w-md flex flex-col gap-4">
+    <div className="max-w-screen md:w-sm flex flex-col gap-4">
       {/* Profile Header */}
       <div>
         <div className="relative rounded-2xl">
